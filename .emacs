@@ -8,7 +8,8 @@
 
 (if (in-terminal)
     (menu-bar-mode -1)
-  (tool-bar-mode -1))
+  (tool-bar-mode -1)
+  (load-theme 'minimal-light))
 
 ;; don't ring alarms
 (setq ring-bell-function 'ignore)
@@ -58,13 +59,15 @@
 (require 'helm-config)
 (helm-mode 1)
 
+;; EVIL MODE
+(evil-mode 1)
+
 ;; neotree
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
 ;; theme control
 (setq custom-safe-themes t)
-(load-theme 'minimal-light t)
 
 ;; syntax checks
 (add-hook 'after-init-hook #'global-flycheck-mode)
